@@ -25,10 +25,11 @@ public class RegisterController
 	}
 	
 	@RequestMapping(value="/register", method=GET)
-	public String showRigistrationForm()
+	public String showRegistrationForm(Model model) 
 	{
-		return "registerForm";
-	}
+	    model.addAttribute(new User());
+	    return "registerForm";
+	  }
 	
 	@RequestMapping(value="/register",method=POST)
 	public String processRegistration(@Valid User user,Errors errors)
@@ -49,5 +50,10 @@ public class RegisterController
 		return "profile";
 	}
 	
+	@RequestMapping(value="/me", method=GET)
+	public String me() 
+	{
+	    return "home";
+	}
 	
 }

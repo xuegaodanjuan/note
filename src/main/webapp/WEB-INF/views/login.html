@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>WELCOME TO MNOTE</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"></link>
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/bootstrap.min.css}"></link>
+    	<link rel="stylesheet" type="text/css" th:href="@{/resources/style/font-awesome.min.css}"></link>
+   		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/common.css}"></link>
+    	<link rel="stylesheet" type="text/css" th:href="@{/resources/style/index.css}"></link>
+    	<link rel="stylesheet" type="text/css" th:href="@{/resources/style/wangEditor.css}"></link>
+		
+		
+		
+		<script type="text/javascript" th:src="@{/resources/tool/showObject.js}"></script>
+
+	    <script type="text/javascript" th:src="@{/resources/lib/jquery-1.10.2.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/lib/bootstrap.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/index.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/dom-API.js}"></script>
+	
+	    <script type="text/javascript" th:src="@{/resources/js/panel.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/paste.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/progress.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/poly-fill.js}"></script>
+	
+	    <script type="text/javascript" th:src="@{/resources/js/config.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/tool.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/execCommand.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/selectionRangeAPI.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/uploadImg.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/replaceLang.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/droplist.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-code.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-img.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-video.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-table.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-emoticon.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-quote.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-backColor.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-foreColor.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-justify.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-list.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-undo.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-underline.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-strikeThrough.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-redo.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-italic.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-link.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-header.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menu-bold.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/menus.js}"></script>
+	
+	    <script type="text/javascript" th:src="@{/resources/js/iniEditor.js}"></script>
+	    <script type="text/javascript" th:src="@{/resources/js/createEditor.js}"></script>
+		
+		<script type="text/javascript" th:src="@{/resources/js/editor.js}"></script>	
+	
+		
+	</head>
+	<body onload='document.f.username.focus();'>
+		<div id="header" th:include="page :: header"></div>
+		
+		<div id="divDemo"></div><!--demo end-->
+		
+		<button id = "btnDivDemoGet" onclick="getContent()">getContext</button>
+		<button id = "btnDivDemoSet" onclick="setContent()">setContext</button>
+		
+		
+		<div id="content">
+			<a th:href="@{/note/register}">Register Now</a>
+			<form name='f' th:action='@{/login}' method='POST'>
+				<table>
+					<tr>
+						<td>User:</td><td><input type='text' name='username' value='' /></td>
+					</tr>
+					<tr>
+						<td>Password:</td><td><input type='password' name='password'/></td>
+					</tr>
+					<tr>
+						<td colspan='2'><input id="remember_me" name="remember-me" type="checkbox"/><label for="remember_me" class="inline">Remember me</label></td>
+					</tr>
+					<tr>
+						<td colspan='2'><input name="submit" type="submit" value="Login"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<div id="footer" th:include="page :: copy"></div>
+	</body>
+</html>

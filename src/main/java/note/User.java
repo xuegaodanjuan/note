@@ -16,19 +16,19 @@ public class User
 	private Long id;
 	  
 	@NotNull
-	@Size(min=5, max=16)
+	@Size(min=5, max=16, message="username must be between {5} and {16} characters long}")
 	private String username;
 
 	@NotNull
-	@Size(min=5, max=25)
+	@Size(min=5, max=25, message="password must be between {5} and {25} characters long}")
 	private String password;
 	  
 	@NotNull
-	@Size(min=2, max=30)
+	@Size(min=2, max=30, message="firstName must be between {2} and {30} characters long}")
 	private String firstName;
 
 	@NotNull
-	@Size(min=2, max=30)
+	@Size(min=2, max=30, message="lastName must be between {2} and {30} characters long}")
 	private String lastName;
 	  
 	@NotNull

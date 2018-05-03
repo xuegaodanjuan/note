@@ -6,7 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src/main/webapp/resources"/>
+	<classpathentry kind="src" path="src/main/webapp/resources/images"/>
+	<classpathentry excluding="images/" kind="src" path="src/main/webapp/resources"/>
 	<classpathentry kind="src" path="src/main/webapp/WEB-INF/views"/>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
@@ -37,5 +38,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="S:/毕业设计/jar/jsr223.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
