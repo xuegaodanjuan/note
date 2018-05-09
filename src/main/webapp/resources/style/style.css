@@ -1,0 +1,21 @@
+@charset "UTF-8";
+body {
+    font-family:'Arial Bold', 'Arial';
+    width:100%;
+    overflow: hidden;
+    color: #080808;
+}
+#content{;
+	height:85%;
+}
+#footer{
+	text-align:center;
+	color:#080808;;
+}
+.errors{ color:red;	}
+a{ text-decoration:none;}
+a:link,a:visited{color:#428bca;text-decoration:none;}
+a:hover{color:#2a6496;text-decoration:none;}
+a:active{color:#0000FF;;text-decoration:none;}
+
+ 

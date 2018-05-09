@@ -1,4 +1,4 @@
-var editor;
+
 $(document).ready
 (
 	function()
@@ -9,13 +9,3 @@ $(document).ready
 	    editor.create();
 	}
 );
-function getContent()
-{
-	var text = editor.txt.html();
-	alert(text);
-}
-function setContent()
-{
-	var text = "<h3>head</h3>";
-	editor.txt.html(text);
-}

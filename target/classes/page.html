@@ -1,19 +1,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-      
+    <head>
+    </head>
 	<body>
-  
-    <div th:fragment="header">
-		<a th:href="@{/}">
-			<img id = "headerImg"  th:src="@{/resources/images/M.png}" border="0" />
-			MNOTE
-		</a>
-		<a th:href="@{/logout}">Logout</a>
-    </div>
-
-    <div>Content goes here</div>
-  
-    <div th:fragment="copy">Copyright &copy; Molly</div>
+	    <div th:fragment="header">
+	    	<div id = "homePage">
+				<a id="mnote" th:href="@{/}">
+					<img id="headerImg"  th:src="@{/resources/images/M.png}" border="0" />
+					MNOTE
+				</a>
+				<a th:href="@{/logout}">Logout</a>
+			</div>
+			
+	    </div>
+	
+	    <div>Content goes here</div>
+	  
+	    <div th:fragment="copy">Copyright &copy; Molly</div>
   </body>
   
 </html>
