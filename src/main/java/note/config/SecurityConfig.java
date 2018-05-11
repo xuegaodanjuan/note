@@ -26,10 +26,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 			.authorizeRequests()
 				.antMatchers("/").authenticated()
 				.antMatchers("/regist/me").authenticated()
+				.antMatchers(HttpMethod.POST,"/login/msg").authenticated()
 				.antMatchers(HttpMethod.POST,"/notes").authenticated()
 				.anyRequest().permitAll();
 	}
 	
+	/*
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth)  throws Exception
 	{
@@ -38,6 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 				.withUser("user").password("password").roles("USER")
 				.and()
 				.withUser("admin").password("password").roles("USER","ADMIN");
-		
 	}
+	*/
 }

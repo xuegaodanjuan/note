@@ -5,11 +5,11 @@
 	<body>
 	    <div th:fragment="header">
 	    	<div id = "homePage">
-				<a id="mnote" th:href="@{/}">
-					<img id="headerImg"  th:src="@{/resources/images/M.png}" border="0" />
-					MNOTE
-				</a>
-				<a th:href="@{/logout}">Logout</a>
+	    		<span id="pic"><img id="headerImg"  th:src="@{/resources/images/M.png}" border="0" /></span>
+	    		<span id="mnoteLink"><span id="inMnoteLink"><a th:href="@{/}">MNOTE</a></span></span>
+	    		
+				
+				<span id="logoutMsg"><span id="inLogoutMsg"><a th:href="@{/logout}">Logout</a></span></span>
 			</div>
 			
 	    </div>

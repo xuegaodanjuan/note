@@ -4,5 +4,6 @@ import note.User;
 public interface RegisterRepository 
 {
 	User save(User user);
+	User save2(User user);
 	User findByUsername(String username);
 }

@@ -2,36 +2,57 @@
       xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Spitter</title>
-		<link rel="stylesheet" type="text/css" 
-			  th:href="@{/resources/style.css}"></link>
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/style.css}"></link>
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/page.css}"></link>
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/registerForm.css}"></link>
 	</head>
 	<body>
 		<div id="header" th:include="page :: header"></div>
 		<div id="content">
-		<h1>Register</h1>
-		<form method="POST" th:object="${user}" th:action="@{/note/register}">
-			<div class="errors" th:if="${#fields.hasErrors('*')}">
-				<ul>
-					<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
-				</ul>
+		<h1 id="registerMsg">Register</h1>
+
+		<div id="registerBox">
+			<div id="registerColorBox">
+				<form id="inputForm" method="POST" th:object="${user}" th:action="@{/note/register}">
+
+										
+					<span th:field="*{firstName}" th:class="${#fields.hasErrors('firstName')}? 'errorMsg':'inputMsg' ">First Name: </span> 
+					<span class="inputLine"><input autocomplete="off" type="text" th:field="*{firstName}" th:class="${#fields.hasErrors('firstName')}? 'error':'inputRegisterMsg' " /></span><br/>
+					<ul class="errUl">
+						<li th:each="err : ${#fields.errors('firstName')}" th:text="${err}">Input is incorrect</li>
+					</ul>
+					
+			        <span th:class="${#fields.hasErrors('lastName')}? 'errorMsg':'inputMsg' ">Last Name: </span>
+					<span class="inputLine"><input autocomplete="off" type="text" th:field="*{lastName}" th:class="${#fields.hasErrors('lastName')}? 'error':'inputRegisterMsg' " /></span><br/>
+			  		<ul class="errUl">
+						<li th:each="err : ${#fields.errors('lastName')}" th:text="${err}">Input is incorrect</li>
+					</ul>
+					
+			        <span th:class="${#fields.hasErrors('email')}? 'errorMsg':'inputMsg' ">Email: </span>
+					<span class="inputLine"><input autocomplete="off" type="text" th:field="*{email}" th:class="${#fields.hasErrors('email')}? 'error':'inputRegisterMsg' " /></span><br/>
+			  		<ul class="errUl">
+						<li th:each="err : ${#fields.errors('email')}" th:text="${err}">Input is incorrect</li>
+					</ul>
+					
+			        <span th:class="${#fields.hasErrors('username')}? 'errorMsg':'inputMsg' ">Username: </span>
+					<span class="inputLine"><input autocomplete="off" type="text" th:field="*{username}" th:class="${#fields.hasErrors('username')}? 'error':'inputRegisterMsg' " /></span><br/>
+			 		<ul class="errUl">
+						<li th:each="err : ${#fields.errors('username')}" th:text="${err}">Input is incorrect</li>
+					</ul>
+					
+			        <span th:class="${#fields.hasErrors('password')}? 'errorMsg':'inputMsg' ">Password: </span>
+					<span class="inputLine"><input autocomplete="off" type="password" th:field="*{password}" th:class="${#fields.hasErrors('password')}? 'error':'inputRegisterMsg' " /></span><br/>
+					<ul class="errUl">
+						<li th:each="err : ${#fields.errors('password')}" th:text="${err}">Input is incorrect</li>
+					</ul>
+								        
+			        <input id="submitButton" type="submit" value="Register Now" />
+				</form>
 			</div>
-			<label th:class="${#fields.hasErrors('firstName')}? 'error'">First Name</label>: 
-			<input type="text" th:field="*{firstName}" th:class="${#fields.hasErrors('firstName')}? 'error'" /><br/>
-	  
-	        <label th:class="${#fields.hasErrors('lastName')}? 'error'">Last Name</label>: 
-			<input type="text" th:field="*{lastName}" th:class="${#fields.hasErrors('lastName')}? 'error'" /><br/>
-	  
-	        <label th:class="${#fields.hasErrors('email')}? 'error'">Email</label>: 
-			<input type="text" th:field="*{email}" th:class="${#fields.hasErrors('email')}? 'error'" /><br/>
-	  
-	        <label th:class="${#fields.hasErrors('username')}? 'error'">Username</label>: 
-			<input type="text" th:field="*{username}" th:class="${#fields.hasErrors('username')}? 'error'" /><br/>
-	  
-	        <label th:class="${#fields.hasErrors('password')}? 'error'">Password</label>: 
-			<input type="password" th:field="*{password}" th:class="${#fields.hasErrors('password')}? 'error'" /><br/>
-	        
-	        <input type="submit" value="Register" />
-      </form>
+		</div>
+		
+		<div id="own">i already own a MNOTE account :)</div>
+		<div id="login"><a th:href="@{/login}">Login</a></div>
     </div>
     <div id="footer" th:include="page :: copy"></div>
   </body>
