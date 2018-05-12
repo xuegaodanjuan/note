@@ -6,14 +6,57 @@
 		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/page.css}"></link>
 		<link rel="stylesheet" type="text/css" th:href="@{/resources/style/profile.css}"></link>
 	</head>
-	<div id="header" th:include="page :: header"></div>
 	
-	<div id="content">
-		<h1>Your Profile</h1>
-		<span th:text="${user.username}">username</span><br/>
-		<span th:text="${user.firstName}">First</span> <span th:text="${user.lastName}">Last</span><br/>
-		<span th:text="${user.email}">email</span>
-    </div>	
+	<div id="spaceBlock1"></div>
+	<div id="contentLeft">
+		<div id="contentBox">
+			<div id="content">
+            	<div class="block">
+                    <div class="msg">
+                    	<div id="tittle1" class="msgTittle">document authentic local specialities</div>
+						<div class="msgContent">
+							Enjoy the good food.Every day in life has a moment worth of encounters.
+							Share feelings and find common experiences with ladies honey one day.
+						</div>
+					</div>
+					<div class="space"></div>
+					<div class="pic"><img class="Img" th:src="@{/resources/images/food.png}" border="0" /></div>
+              	</div>
+                                 
+               	<div class="block">
+                    <div class="pic"><img class="Img"  th:src="@{/resources/images/travel.png}" border="0" /></div>
+                    <div class="space"></div>
+                	<div class="msg">
+	                	<div id="tittle2" class="msgTittle">record the droplet of incredible tours</div>
+						<div class="msgContent">
+							Walking, watching, listening, crying, laughing.
+							Record the inexperenced and wild world and scenes familiar to most.
+						</div>
+	                </div>
+                </div>
+                                 
+                <div class="block">
+                    <div class="msg">
+                    	<div id="tittle3" class="msgTittle">manage work arrangements</div>
+						<div class="msgContent">
+							Summarizing decision judgment, thinking mode, task flow and living habits.
+							work in a planned way, get a predictable result.
+						</div>             
+                    </div>
+                    <div class="space"></div>
+                    <div class="pic"><img class="Img"  th:src="@{/resources/images/work.png}" border="0" /></div>
+                </div>
+          	</div>
+    	</div>
+	</div>
+	<div id="contentRight">
+		<div id="hi">Hi, username</div>
+    	<div id="achieve">achieve more with MNOTE</div>
+		<a id="start" th:href="@{/home}">Start Now!</a>
+	</div>
+	<div id="spaceBlock2"></div>
+	
 	
 	<div id="footer" th:include="page :: copy"></div>
+	
 </html>

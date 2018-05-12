@@ -17,15 +17,7 @@ import note.User;
 @Repository
 public class JdbcUserRepository extends JdbcDaoSupportExtend implements RegisterRepository 
 {
-	private JdbcOperations jdbc;
 	private JdbcTemplate jdbcTemplate;
-	
-
-	@Autowired
-	public JdbcUserRepository(JdbcOperations jdbc)
-	{
-		this.jdbc = jdbc;
-	}
 	
 	private static class UserRowMapper implements RowMapper<User>
 	{
@@ -44,24 +36,6 @@ public class JdbcUserRepository extends JdbcDaoSupportExtend implements Register
 	
 	public User save(User user)
 	{
-		System.out.println("i am in save");
-		System.out.println("Username: "+user.getUsername());
-		String id = "1";
-		jdbc.update("insert into User (id, username, password, firstName, lastName, email) values (?, ?, ?, ?, ?, ?)",
-				id,
-				user.getUsername(),
-				user.getPassword(),
-				user.getFirstName(),
-				user.getLastName(),
-				user.getEmail()
-				);
-		return user;
-	}
-	
-	public User save2(User user)
-	{
-		System.out.println("i am in save2");
-		System.out.println("Username: "+user.getUsername());
 		String id = "1";
 		jdbcTemplate = this.getJdbcTemplate();
 		
@@ -73,13 +47,11 @@ public class JdbcUserRepository extends JdbcDaoSupportExtend implements Register
 				user.getLastName(),
 				user.getEmail()
 				);
-		System.out.println("inset result: "+ i);
 		return user;
 	}
 	
 	public User findByUsername(String username)
 	{
-		System.out.println("i am in findByUsername");
 		jdbcTemplate = this.getJdbcTemplate();
 		User resultUser = new User();
 		try{
@@ -88,21 +60,14 @@ public class JdbcUserRepository extends JdbcDaoSupportExtend implements Register
 									  
 									                    public User mapRow(ResultSet rs,int rowNum) throws SQLException
 														{
-									                    	System.out.println("rowNum:"+rowNum);
 									                    	User user = new User();
 									                    	if(rowNum>=0)
 									                    	{
-									                    		System.out.println("--------------------------");
 									                    		user.setId((long)1);
 									                    		user.setUsername(rs.getString("username"));
 									                    		user.setFirstName(rs.getString("firstName"));
 									                    		user.setLastName(rs.getString("lastName"));
 									                    		user.setEmail(rs.getString("email"));
-									                    		System.out.println(rs.getString("username") + " findbyname");
-									                    		System.out.println(rs.getString("firstName") + " findbyname");
-									                    		System.out.println(rs.getString("lastName") + " findbyname");
-									                    		System.out.println(rs.getString("email") + " findbyname");
-									                    		System.out.println("--------------------------");
 									                    	}
 									                    	else
 									                    	{
@@ -118,10 +83,8 @@ public class JdbcUserRepository extends JdbcDaoSupportExtend implements Register
 		}
 		 catch (Exception e) {
 			 resultUser.setId((long)0);
-			 System.out.println("i find no data");
 		}
 		
-		System.out.println(resultUser.getUsername() + " findbyname finish");
 		return resultUser;
 	}
 }

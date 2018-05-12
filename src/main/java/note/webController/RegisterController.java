@@ -38,8 +38,7 @@ public class RegisterController
 		{
 			return "registerForm";
 		}
-		registerRepository.save2(user);
-		System.out.println("i get and save register message");
+		registerRepository.save(user);
 		return "redirect:/note/" + user.getUsername();
 	}
 	
@@ -48,8 +47,6 @@ public class RegisterController
 	{
 		User user = registerRepository.findByUsername(username);
 		model.addAttribute(user);
-		System.out.println("get username from sql:"+user.getUsername());
-		System.out.println("i will goto profile");
 		return "profile";
 	}
 	
