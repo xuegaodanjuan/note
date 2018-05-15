@@ -43,8 +43,11 @@ public class LoginController {
 		}
 		
 		User user = registerRepository.findByUsername(loginMsg.username);
-		System.out.println("sql finish");
-		System.out.println("user.id = "+user.getId());
-		return "home";
+		
+		if(user.getId()==0)
+		{
+			return "login";
+		}
+		return "redirect:/home/" + user.getUsername();
 	}
 }

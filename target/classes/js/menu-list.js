@@ -15,9 +15,9 @@ function List(editor) {
     // 初始化 droplist
     this.droplist = new DropList(this, {
         width: 120,
-        $title: $('<p>设置列表</p>'),
+        $title: $('<p>list</p>'),
         type: 'list', // droplist 以列表形式展示
-        list: [{ $elem: $('<span><i class="w-e-icon-list-numbered"></i> 有序列表</span>'), value: 'insertOrderedList' }, { $elem: $('<span><i class="w-e-icon-list2"></i> 无序列表</span>'), value: 'insertUnorderedList' }],
+        list: [{ $elem: $('<span><i class="w-e-icon-list-numbered"></i>Ordered list</span>'), value: 'insertOrderedList' }, { $elem: $('<span><i class="w-e-icon-list2"></i>Unordered list</span>'), value: 'insertUnorderedList' }],
         onClick: function onClick(value) {
             // 注意 this 是指向当前的 List 对象
             _this._command(value);

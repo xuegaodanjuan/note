@@ -29,7 +29,7 @@ public class RegisterController
 	{
 	    model.addAttribute(new User());
 	    return "registerForm";
-	  }
+	}
 	
 	@RequestMapping(value="/register",method=POST)
 	public String processRegistration(@Valid User user,Errors errors)
@@ -48,12 +48,6 @@ public class RegisterController
 		User user = registerRepository.findByUsername(username);
 		model.addAttribute(user);
 		return "profile";
-	}
-	
-	@RequestMapping(value="/me", method=GET)
-	public String me() 
-	{
-	    return "home";
 	}
 	
 }

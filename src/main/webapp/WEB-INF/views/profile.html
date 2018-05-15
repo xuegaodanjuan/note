@@ -50,9 +50,9 @@
     	</div>
 	</div>
 	<div id="contentRight">
-		<div id="hi">Hi, username</div>
+		<div id="hi" th:text="'Hi,'+${user.username}">username</div><br/>
     	<div id="achieve">achieve more with MNOTE</div>
-		<a id="start" th:href="@{/home}">Start Now!</a>
+		<a id="start" th:href="@{'/home/'+${user.username}}">Start Now!</a>
 	</div>
 	<div id="spaceBlock2"></div>
 	

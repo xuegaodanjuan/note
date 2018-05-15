@@ -12,7 +12,7 @@ public class HomeControllerTest {
 
 	  @Test
 	  public void testHomePage() throws Exception {
-	    HomeController controller = new HomeController();
+	    HomeController controller = new HomeController(null);
 	    MockMvc mockMvc = standaloneSetup(controller).build();
 	    mockMvc.perform(get("/"))
 	           .andExpect(view().name("home"));
